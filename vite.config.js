@@ -34,7 +34,7 @@ const targets = [
 export default defineConfig(({ mode }) => ({
   plugins: [viteGoogleAppsScript(), viteStaticCopy({ targets })],
   build: {
-    minify: mode !== 'development',
+    minify: false, // Disable minification for readability in Apps Script
     outDir: resolve(process.cwd(), 'dist'),
     lib: {
       entry: resolve(process.cwd(), 'src/index.js'),
